@@ -6,7 +6,7 @@ use std::str::FromStr;
 pub fn read_to_string(filename: &'static str) -> BoxResult<String> {
 	let string = fs::read_to_string(filename)?;
 
-	Ok(string)
+	Ok(string.trim().to_string())
 }
 
 pub fn lines<T>(filename: &'static str) -> BoxResult<Vec<T>>
